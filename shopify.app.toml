@@ -1,0 +1,27 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+name = "shopbot-data-layer"
+client_id = "db78d540944289dd74480759847d4456"
+application_url = "https://garbage-rivers-blind-fares.trycloudflare.com"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_pixels,read_customer_events,read_themes,write_themes,read_cart_transforms,write_checkouts"
+
+[auth]
+redirect_urls = [
+  "https://garbage-rivers-blind-fares.trycloudflare.com/auth/callback",
+  "https://garbage-rivers-blind-fares.trycloudflare.com/auth/shopify/callback",
+  "https://garbage-rivers-blind-fares.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2023-10"
+
+[pos]
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "quickstart-e401267b.myshopify.com"

@@ -1,0 +1,24 @@
+{% assign gtmValue = app.metafields.ids.gtm_id %}
+
+<script>
+var f=document.getElementsByTagName('script')[0], j=document.createElement('script');
+j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id={{ gtmValue }}';
+f.parentNode.insertBefore(j, f);
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+setInterval(() => {
+  var dl = JSON.parse(sessionStorage.getItem("dataLayer"));
+  if (!dl._r) { dl._r = true;
+    sessionStorage.setItem("dataLayer", JSON.stringify(dl));
+    window.dataLayer.push(dl);
+  }
+}, 1000);
+</script>
+
+{% schema %}
+  {
+    "name": "Google Tag Manager",
+    "target": "head",
+    "settings": []
+  }
+{% endschema %}

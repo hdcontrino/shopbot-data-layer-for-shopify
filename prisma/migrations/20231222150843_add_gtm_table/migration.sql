@@ -1,0 +1,5 @@
+-- CreateTable
+CREATE TABLE "GTM" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "tag" TEXT NOT NULL
+);
